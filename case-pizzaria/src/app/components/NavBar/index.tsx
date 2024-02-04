@@ -45,7 +45,7 @@ export const NavBar = () => {
         <Image
             src={chat}
             alt="icon chat"
-            className="w-50 h-50 p-1 border rounded-md hover:bg-warning cursor-pointer"
+            className="w-50 h-50 p-1 border rounded-md hover:bg-warning cursor-pointer "
           />
         </li>
         <li>

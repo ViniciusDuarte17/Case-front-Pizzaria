@@ -11,3 +11,27 @@ body {
   box-sizing: border-box;
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: #fff3;
+  -webkit-border-radius: 1ex;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: #fff3;
+  -webkit-border-radius: 1ex;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #FF9921;
+  -webkit-border-radius: 1ex;
+  margin-top: 2%;
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: #fff3;
+}
+
