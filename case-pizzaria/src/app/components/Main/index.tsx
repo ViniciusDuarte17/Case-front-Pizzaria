@@ -7,6 +7,9 @@ import frenchFried from "@/app/icons/french_fried.svg";
 import pack from "@/app/icons/pack.svg";
 import { motion, useScroll } from "framer-motion";
 import { CardMenu } from "../CardMenu";
+import { CardPizza } from "../CardPizza";
+import pizzaImg from "@/app/icons/Pepperoni-Pizza 1.svg";
+import pizzaTop from "@/app/icons/toppng 2.svg";
 
 
 export const Main = () => {
@@ -19,6 +22,25 @@ export const Main = () => {
     { icon: frenchFried, name: "Fries" },
     { icon: pack, name: "Pack" },
     
+  ];
+
+  const pizzas = [
+    {
+      id: 1,
+      img: pizzaImg,
+      minTime: 10,
+      maxTime: 14,
+      namePizza: 'Pizza with Peperoni',
+      preco: 12
+    },
+    {
+      id: 2,
+      img: pizzaTop,
+      minTime: 16,
+      maxTime: 25,
+      namePizza: 'Pizza with Cheese',
+      preco: 14
+    }
   ];
 
   return (
@@ -71,6 +93,11 @@ export const Main = () => {
         <div>
             <span className="text-warning bg-primary shadow p-2 rounded-md font-sans">Ver tudo</span>
         </div>
+      </section>
+      <section className="flex self-center gap-3 w-[90%] ">    
+       {
+        pizzas.map( item =><CardPizza key={item.id} img={item.img} namePizza={item.namePizza} minTime={item.minTime} maxTime={item.maxTime} preco={item.preco} />)
+       }
       </section>
     </main>
   );
