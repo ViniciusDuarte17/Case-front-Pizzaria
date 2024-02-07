@@ -3,7 +3,7 @@ import React from "react";
 
 export const Cart = () => {
     return(
-        <React.Fragment className="border border-spacing-0">
+        <React.Fragment>
             <section>
                 <p>img-pizza</p>
             </section>
