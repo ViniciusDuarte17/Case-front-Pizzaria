@@ -3,6 +3,7 @@ import React from "react";
 import { NavBar } from "@/app/components/NavBar";
 import { Header } from "@/app/components/Header";
 import { Main } from "./components/Main";
+import { SideBar } from "./components/SideBar";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       </section>
       <section className="flex flex-col w-[24%]">
         <div>
-          coluna 3
+          <SideBar />
         </div>
       </section>
     </main>
