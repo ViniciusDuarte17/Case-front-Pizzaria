@@ -21,7 +21,6 @@ export const Main = () => {
     { icon: sandwich, name: "Burge" },
     { icon: frenchFried, name: "Fries" },
     { icon: pack, name: "Pack" },
-    
   ];
 
   const pizzas = [
