@@ -1,6 +1,7 @@
 import { PropsPizza } from "@/app/@types/pizza";
 import Image from "next/image";
 import React from "react";
+import plus from "@/app/icons/plus (1).svg";
 
 export const CardPizza = ({...pizza}: PropsPizza) => {
     
@@ -17,8 +18,10 @@ export const CardPizza = ({...pizza}: PropsPizza) => {
                 <h1 className="font-sans font-bold text-[22px] break-all whitespace-wrap">{pizza.namePizza}</h1>
                 <span className="text-info text-xs">{pizza.minTime} - {pizza.maxTime} minutos</span>
                 <div className="w-40 pb-2 pt-1 flex justify-between items-center mr-2">
-                    <span className="text-success">{pizza.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</span>
-                    <button className="w-8 border border-none shadow text-med text-secondary">+</button>
+                    <span className="text-success font-sans font-bold">{pizza.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</span>
+                    <button className="w-10 h-12 border border-none rounded-md shadow text-med text-secondary hover:bg-success">
+                        <Image width={25} className="m-auto" src={plus} alt="Sinal de mais"/>
+                    </button>
                 </div>
             </section>
         </div>
