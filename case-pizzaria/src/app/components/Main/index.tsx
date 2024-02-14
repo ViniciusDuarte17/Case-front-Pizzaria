@@ -42,68 +42,68 @@ export const Main = () => {
       typeSauce: 'extra virgem',
       preco: 14
     },
-    // {
-    //   id: 3,
-    //   img: pizzaTop,
-    //   minTime: 16,
-    //   maxTime: 25,
-    //   namePizza: 'Pizza with Cheese',
-    //   typeSauce: 'extra virgem',
-    //   preco: 14
-    // },
-    // {
-    //   id: 4,
-    //   img: pizzaTop,
-    //   minTime: 16,
-    //   maxTime: 25,
-    //   namePizza: 'Pizza with Cheese',
-    //   typeSauce: 'extra virgem',
-    //   preco: 14
-    // },
-    // {
-    //   id: 5,
-    //   img: pizzaTop,
-    //   minTime: 16,
-    //   maxTime: 25,
-    //   namePizza: 'Pizza with Cheese',
-    //   typeSauce: 'extra virgem',
-    //   preco: 14
-    // },
-    // {
-    //   id: 6,
-    //   img: pizzaTop,
-    //   minTime: 16,
-    //   maxTime: 25,
-    //   namePizza: 'Pizza with Cheese',
-    //   typeSauce: 'extra virgem',
-    //   preco: 14
-    // },
-    // {
-    //   id: 7,
-    //   img: pizzaTop,
-    //   minTime: 16,
-    //   maxTime: 25,
-    //   namePizza: 'Pizza with Cheese',
-    //   typeSauce: 'extra virgem',
-    //   preco: 14
-    // },
+    {
+      id: 3,
+      img: pizzaTop,
+      minTime: 16,
+      maxTime: 25,
+      namePizza: 'Pizza with Cheese',
+      typeSauce: 'extra virgem',
+      preco: 14
+    },
+    {
+      id: 4,
+      img: pizzaTop,
+      minTime: 16,
+      maxTime: 25,
+      namePizza: 'Pizza with Cheese',
+      typeSauce: 'extra virgem',
+      preco: 14
+    },
+    {
+      id: 5,
+      img: pizzaTop,
+      minTime: 16,
+      maxTime: 25,
+      namePizza: 'Pizza with Cheese',
+      typeSauce: 'extra virgem',
+      preco: 14
+    },
+    {
+      id: 6,
+      img: pizzaTop,
+      minTime: 16,
+      maxTime: 25,
+      namePizza: 'Pizza with Cheese',
+      typeSauce: 'extra virgem',
+      preco: 14
+    },
+    {
+      id: 7,
+      img: pizzaTop,
+      minTime: 16,
+      maxTime: 25,
+      namePizza: 'Pizza with Cheese',
+      typeSauce: 'extra virgem',
+      preco: 14
+    },
   ];
 
   return (
     <main className="flex flex-col h-[80vh] box-border">
       <section className="flex self-center mt-1 w-[95%] h-[16em] bg-black rounded-[24px] box-border">
-        <section className="flex flex-col w-[44vw] h-full pl-6 pt-6 ">
+        <section className="flex flex-col w-[44vw] h-full pl-6 pt-6 max-[892px]:h-[25vh]">
           <h1 className="text-primary text-xl pb-4">
             Make Your First Order and Get <br />
             <strong className="text-warning">50% OF</strong>
           </h1>
-          <p className="text-info text-md pb-4 flex-wrap text-wrap">
+          <p className="text-info text-md pb-4 flex-wrap text-wrap max-[892px]:text-primary">
             In publishing and graphic design, Lorem ipsum is a placeholder text
             commonly used to demonstrate the visual form of a document or a
             typeface without.
           </p>
 
-          <span className="bg-warning w-[140px] text-center p-2 rounded-[15px] text-primary flex-wrap text-wrap">
+          <span className="bg-warning w-[140px] text-center p-2 rounded-[15px] text-primary flex-wrap text-wrap max-[892px]:bg-primary">
             Order now
           </span>
         </section>
@@ -140,7 +140,7 @@ export const Main = () => {
             <span className="text-warning bg-primary shadow p-2 rounded-md font-sans">Ver tudo</span>
         </div>
       </section>
-      <section className="flex self-center gap-3 w-[90%] overflow-x-scroll list-none custom-scrollbar max-[1110]">    
+      <section className="grid grid-cols-2 border border-none self-center gap-3 w-[90%] overflow-x-scroll list-none custom-scrollbar max-[1110] max-[892px]:grid-cols-1">    
        {
         pizzas.map( item =><CardPizza key={item.id} img={item.img} namePizza={item.namePizza} minTime={item.minTime} maxTime={item.maxTime} preco={item.preco} />)
        }

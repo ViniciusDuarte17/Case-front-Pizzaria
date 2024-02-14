@@ -6,7 +6,7 @@ import plus from "@/app/icons/plus (1).svg";
 export const CardPizza = ({...pizza}: PropsPizza) => {
     
     return(
-        <div className="flex gap-4 border border-s-secondary box-border w-[35%] h-35 rounded-md shadow border-none">
+        <div className="flex gap-4 border border-s-secondary box-border w-[90%] h-35 rounded-md shadow border-none">
             <section>
                 <Image 
                     width={100}
