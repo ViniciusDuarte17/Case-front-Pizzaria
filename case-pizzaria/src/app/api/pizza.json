@@ -1,0 +1,75 @@
+
+[
+  {
+    "id": 1,
+    "img": "@/app/icons/Pepperoni-Pizza 1.svg",
+    "minTime": 8,
+    "maxTime": 12,
+    "namePizza": "Pizza de Pepperoni",
+    "sauce": "molho de tomate caseiro",
+    "preco": 15
+  },
+  {
+    "id": 2,
+    "img": "@/app/icons/toppng 2.svg",
+    "minTime": 14,
+    "maxTime": 22,
+    "namePizza": "Pizza de Queijo",
+    "sauce": "molho barbecue",
+    "preco": 17
+  },
+  {
+    "id": 3,
+    "img": "@/app/icons/Pepperoni-Pizza 1.svg",
+    "minTime": 13,
+    "maxTime": 20,
+    "namePizza": "Pizza de Frango",
+    "sauce": "molho de alho",
+    "preco": 16
+  },
+  {
+    "id": 4,
+    "img": "@/app/icons/toppng 2.svg",
+    "minTime": 15,
+    "maxTime": 24,
+    "namePizza": "Pizza de Calabresa",
+    "sauce": "molho pesto",
+    "preco": 18
+  },
+  {
+    "id": 5,
+    "img": "@/app/icons/Pepperoni-Pizza 1.svg",
+    "minTime": 16,
+    "maxTime": 25,
+    "namePizza": "Pizza de Marguerita",
+    "sauce": "molho de queijo cheddar",
+    "preco": 19
+  },
+  {
+    "id": 6,
+    "img": "@/app/icons/toppng 2.svg",
+    "minTime": 12,
+    "maxTime": 18,
+    "namePizza": "Pizza de Vegetais",
+    "sauce": "molho de curry",
+    "preco": 16
+  },
+  {
+    "id": 7,
+    "img": "@/app/icons/Pepperoni-Pizza 1.svg",
+    "minTime": 11,
+    "maxTime": 17,
+    "namePizza": "Pizza de Atum",
+    "sauce": "molho tártaro",
+    "preco": 17
+  },
+  {
+    "id": 8,
+    "img": "@/app/icons/toppng 2.svg",
+    "minTime": 14,
+    "maxTime": 22,
+    "namePizza": "Pizza de Quatro Queijos",
+    "sauce": "molho de pimenta",
+    "preco": 20
+  }
+]

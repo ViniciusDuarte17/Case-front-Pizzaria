@@ -4,7 +4,7 @@ import { MethodCard } from "./card";
 import { MethodMoney } from "./money";
 
 
-export const MethodPay = () => {
+export const MenuPay = () => {
   const [selectMethod, setSelectMethod] = useState<string>('');
 
   let componentSelected;

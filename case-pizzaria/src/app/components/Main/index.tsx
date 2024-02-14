@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import Image from "next/image";
 import pizza from "@/app/icons/pizza.svg";
 import fatia from "@/app/icons/fatia.svg";
@@ -8,11 +8,10 @@ import pack from "@/app/icons/pack.svg";
 import { motion, useScroll } from "framer-motion";
 import { CardMenu } from "../CardMenu";
 import { CardPizza } from "../CardPizza";
-import pizzaImg from "@/app/icons/Pepperoni-Pizza 1.svg";
-import pizzaTop from "@/app/icons/toppng 2.svg";
-
+import { GlobalStateContext } from "@/app/context/GlobalStateContext";
 
 export const Main = () => {
+  const { pizzas } = useContext(GlobalStateContext);
   const ref = useRef(null);
   const { scrollXProgress } = useScroll({ container: ref });
  
@@ -23,71 +22,6 @@ export const Main = () => {
     { icon: pack, name: "Pack" },
   ];
 
-  const pizzas = [
-    {
-      id: 1,
-      img: pizzaImg,
-      minTime: 10,
-      maxTime: 14,
-      namePizza: 'Pizza with Peperoni',
-      typeSauce: 'extra tomate',
-      preco: 12
-    },
-    {
-      id: 2,
-      img: pizzaTop,
-      minTime: 16,
-      maxTime: 25,
-      namePizza: 'Pizza with Cheese',
-      typeSauce: 'extra virgem',
-      preco: 14
-    },
-    {
-      id: 3,
-      img: pizzaTop,
-      minTime: 16,
-      maxTime: 25,
-      namePizza: 'Pizza with Cheese',
-      typeSauce: 'extra virgem',
-      preco: 14
-    },
-    {
-      id: 4,
-      img: pizzaTop,
-      minTime: 16,
-      maxTime: 25,
-      namePizza: 'Pizza with Cheese',
-      typeSauce: 'extra virgem',
-      preco: 14
-    },
-    {
-      id: 5,
-      img: pizzaTop,
-      minTime: 16,
-      maxTime: 25,
-      namePizza: 'Pizza with Cheese',
-      typeSauce: 'extra virgem',
-      preco: 14
-    },
-    {
-      id: 6,
-      img: pizzaTop,
-      minTime: 16,
-      maxTime: 25,
-      namePizza: 'Pizza with Cheese',
-      typeSauce: 'extra virgem',
-      preco: 14
-    },
-    {
-      id: 7,
-      img: pizzaTop,
-      minTime: 16,
-      maxTime: 25,
-      namePizza: 'Pizza with Cheese',
-      typeSauce: 'extra virgem',
-      preco: 14
-    },
-  ];
 
   return (
     <main className="flex flex-col h-[80vh] box-border">
@@ -142,8 +76,9 @@ export const Main = () => {
       </section>
       <section className="grid grid-cols-2 border border-none self-center gap-3 w-[90%] overflow-x-scroll list-none custom-scrollbar max-[1110] max-[892px]:grid-cols-1">    
        {
-        pizzas.map( item =><CardPizza key={item.id} img={item.img} namePizza={item.namePizza} minTime={item.minTime} maxTime={item.maxTime} preco={item.preco} />)
-       }
+        pizzas?.length > 0 ?(
+        pizzas?.map( item =><CardPizza key={item.id} img={item.img} namePizza={item.namePizza} minTime={item.minTime} maxTime={item.maxTime} preco={item.preco} />)
+       ) : <div className="flex justify-end">carregando...</div>}
       </section>
     </main>
   );
