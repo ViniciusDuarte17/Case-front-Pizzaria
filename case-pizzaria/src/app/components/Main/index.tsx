@@ -30,6 +30,7 @@ export const Main = () => {
       minTime: 10,
       maxTime: 14,
       namePizza: 'Pizza with Peperoni',
+      typeSauce: 'extra tomate',
       preco: 12
     },
     {
@@ -38,8 +39,54 @@ export const Main = () => {
       minTime: 16,
       maxTime: 25,
       namePizza: 'Pizza with Cheese',
+      typeSauce: 'extra virgem',
       preco: 14
-    }
+    },
+    // {
+    //   id: 3,
+    //   img: pizzaTop,
+    //   minTime: 16,
+    //   maxTime: 25,
+    //   namePizza: 'Pizza with Cheese',
+    //   typeSauce: 'extra virgem',
+    //   preco: 14
+    // },
+    // {
+    //   id: 4,
+    //   img: pizzaTop,
+    //   minTime: 16,
+    //   maxTime: 25,
+    //   namePizza: 'Pizza with Cheese',
+    //   typeSauce: 'extra virgem',
+    //   preco: 14
+    // },
+    // {
+    //   id: 5,
+    //   img: pizzaTop,
+    //   minTime: 16,
+    //   maxTime: 25,
+    //   namePizza: 'Pizza with Cheese',
+    //   typeSauce: 'extra virgem',
+    //   preco: 14
+    // },
+    // {
+    //   id: 6,
+    //   img: pizzaTop,
+    //   minTime: 16,
+    //   maxTime: 25,
+    //   namePizza: 'Pizza with Cheese',
+    //   typeSauce: 'extra virgem',
+    //   preco: 14
+    // },
+    // {
+    //   id: 7,
+    //   img: pizzaTop,
+    //   minTime: 16,
+    //   maxTime: 25,
+    //   namePizza: 'Pizza with Cheese',
+    //   typeSauce: 'extra virgem',
+    //   preco: 14
+    // },
   ];
 
   return (
@@ -93,7 +140,7 @@ export const Main = () => {
             <span className="text-warning bg-primary shadow p-2 rounded-md font-sans">Ver tudo</span>
         </div>
       </section>
-      <section className="flex self-center gap-3 w-[90%] ">    
+      <section className="flex self-center gap-3 w-[90%] overflow-x-scroll list-none custom-scrollbar max-[1110]">    
        {
         pizzas.map( item =><CardPizza key={item.id} img={item.img} namePizza={item.namePizza} minTime={item.minTime} maxTime={item.maxTime} preco={item.preco} />)
        }

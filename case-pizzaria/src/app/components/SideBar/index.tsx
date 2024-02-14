@@ -5,6 +5,7 @@ import { FaRegBell } from "react-icons/fa6";
 import profileLogo from "@/app/assets/profile.jpg";
 import { BsCartPlus } from "react-icons/bs";
 import pizzaImg from "@/app/icons/Pepperoni-Pizza 1.svg";
+import { MethodPay } from "./components/pay";
 
 export const SideBar = () => {
 
@@ -35,20 +36,33 @@ export const SideBar = () => {
             </figure>
             <h4 className="font-sans font-bold text-xm">Vinicius Duarte</h4>
           </section>
+          
           <section>
+            
             <span>
               <FaRegBell />
             </span>
           </section>
         </header>
-        <section className="flex w-[100%] justify-between items-center mt-20 mb-5">
+        <section className="flex w-[100%] justify-between items-center mb-1">
           <h1 className="font-sans font-bold text-med">Seus pedidos</h1>
           <span>
             <BsCartPlus />
           </span>
         </section>
-        {cartPizzas.length > 0 &&
-          cartPizzas.map((item) => <Cart key={item.id} {...item} />)}
+        <hr className="text-info"/>
+        <section>
+          {cartPizzas.length > 0 &&
+            cartPizzas.map((item) => <Cart key={item.id} {...item} />)}
+        </section>
+        <section className="flex justify-between items-center">
+          <h1 className="font-sans font-bold text-med">Valor total</h1>
+          <h2 className="font-sans font-bold text-med text-success">R$ 12,00</h2>
+        </section>
+        <section>
+          <hr className="text-info mt-2"/>
+          <MethodPay />
+        </section>
       </main>
     );
 }
