@@ -1,27 +1,14 @@
 import React, { useContext, useRef } from "react";
 import Image from "next/image";
 import pizza from "@/app/icons/pizza.svg";
-import fatia from "@/app/icons/fatia.svg";
-import sandwich from "@/app/icons/sandwich.svg";
-import frenchFried from "@/app/icons/french_fried.svg";
-import pack from "@/app/icons/pack.svg";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { CardMenu } from "../CardMenu";
 import { CardPizza } from "../CardPizza";
 import { GlobalStateContext } from "@/app/context/GlobalStateContext";
 
 export const Main = () => {
-  const { pizzas } = useContext(GlobalStateContext);
+  const { pizzas, menus } = useContext(GlobalStateContext);
   const ref = useRef(null);
-  const { scrollXProgress } = useScroll({ container: ref });
- 
-  const menus = [
-    { icon: fatia, name: "Pizza" },
-    { icon: sandwich, name: "Burge" },
-    { icon: frenchFried, name: "Fries" },
-    { icon: pack, name: "Pack" },
-  ];
-
 
   return (
     <main className="flex flex-col h-[80vh] box-border">

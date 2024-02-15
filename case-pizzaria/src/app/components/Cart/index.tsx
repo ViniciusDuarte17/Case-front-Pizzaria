@@ -18,7 +18,7 @@ export const Cart = ({ ...item }) => {
         </section>
         <section className="">
           <h4 className="font-sans font-bold text-base">{item.namePizza}</h4>
-          <span className="font-sans text-textColor text-xs">extra tomate</span>
+          <span className="font-sans text-textColor text-xs">{item.sauce}</span>
         </section>
       </section>
       <section className="flex items-center justify-between ml-12">

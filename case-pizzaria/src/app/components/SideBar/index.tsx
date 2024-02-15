@@ -1,27 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import { Cart } from "../Cart";
 import { FaRegBell } from "react-icons/fa6";
 import profileLogo from "@/app/assets/profile.jpg";
 import { BsCartPlus } from "react-icons/bs";
-import pizzaImg from "@/app/icons/Pepperoni-Pizza 1.svg";
 import { MenuPay } from "./components/pay";
 import { TotalPreco } from "./components/TotalPreco";
 import { EmptyCart } from "./components/EmptyCart";
-import { PropsPizza } from "@/app/@types/pizza";
+import { GlobalStateContext } from "@/app/context/GlobalStateContext";
 
 export const SideBar = () => {
-  const cartPizzas: PropsPizza[] = [
-    {
-      id: 1,
-      img: pizzaImg,
-      minTime: 10,
-      maxTime: 14,
-      sauce:'extra tomate',
-      namePizza: 'Pizza with Peperoni',
-      preco: 12
-    },
-  ];
+  const { cartPizzas } = useContext(GlobalStateContext);
 
   return (
     <main className="flex flex-col gap-2 p-4">
