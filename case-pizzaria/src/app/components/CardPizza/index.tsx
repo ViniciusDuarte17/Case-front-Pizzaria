@@ -1,14 +1,31 @@
 import { PropsPizza } from "@/app/@types/pizza";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import plus from "@/app/icons/plus (1).svg";
+import { GlobalStateContext } from "@/app/context/GlobalStateContext";
 
 interface Props {
     pizza: PropsPizza;
-    addToPizzaCart: (newItem: PropsPizza) => void; 
 }
 
-export const CardPizza = ({pizza, addToPizzaCart}: Props) => {
+export const CardPizza = ({pizza}: Props) => {
+    const {cartPizzas, setCartPizzas} = useContext(GlobalStateContext)
+
+    const addToPizzaCart = (newItem: PropsPizza) => {
+      const index = cartPizzas.findIndex(
+        (i: PropsPizza) => i.id === newItem.id
+      );
+      const newCart = [...cartPizzas];
+
+      if (index === -1) {
+        const cartItem = { ...newItem, amout: 1 };
+        newCart.push(cartItem);
+      } else {
+        newCart[index].amout = newCart[index].amout + 1;
+      }
+
+      setCartPizzas(newCart);
+    };
     
     return(
         <div className="flex gap-4 border border-s-secondary box-border w-[90%] h-35 rounded-md shadow border-none">

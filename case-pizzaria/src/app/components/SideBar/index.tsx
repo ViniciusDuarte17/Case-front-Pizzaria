@@ -43,7 +43,7 @@ export const SideBar = () => {
       <hr className="text-info" />
       <section>
         {cartPizzas.length > 0 &&
-          cartPizzas.map((item) => <Cart key={item.id} {...item} />)}
+          cartPizzas.map((item) => <Cart key={item.id} {...item}/>)}
       </section>
       <React.Fragment>{cartPizzas.length > 0 && <TotalPreco />}</React.Fragment>
       {cartPizzas.length > 0 ? (

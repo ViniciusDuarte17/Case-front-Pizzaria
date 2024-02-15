@@ -10,8 +10,6 @@ import { PropsPizza } from "../@types/pizza";
 
 export const GlobalState = (props: any) => {
   const [cartPizzas, setCartPizzas] = useState<PropsPizza | any>([]);
-
-  console.log("14", cartPizzas)
  
   const pizzas = [
     {

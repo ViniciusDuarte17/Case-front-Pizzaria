@@ -5,25 +5,10 @@ import { motion } from "framer-motion";
 import { CardMenu } from "../CardMenu";
 import { CardPizza } from "../CardPizza";
 import { GlobalStateContext } from "@/app/context/GlobalStateContext";
-import { PropsPizza } from "@/app/@types/pizza";
 
 export const Main = () => {
-  const { pizzas, menus, cartPizzas, setCartPizzas } = useContext(GlobalStateContext);
+  const { pizzas, menus } = useContext(GlobalStateContext);
   const ref = useRef(null);
-
-  const addToPizzaCart = (newItem: PropsPizza) => {
-    const index = cartPizzas.findIndex((i: PropsPizza) => i.id === newItem.id);
-    const newCart = [...cartPizzas];
-  
-    if (index === -1) {
-      const cartItem = { ...newItem, amout: 1 };
-      newCart.push(cartItem);
-    } else {
-      newCart[index].amout = newCart[index].amout + 1;
-    }
-  
-    setCartPizzas(newCart);
-  };
 
   return (
     <main className="flex flex-col h-[80vh] box-border">
@@ -79,7 +64,7 @@ export const Main = () => {
       <section className="grid grid-cols-2 border border-none self-center gap-3 w-[90%] overflow-x-scroll list-none custom-scrollbar max-[1110] max-[892px]:grid-cols-1">    
        {
         pizzas?.length > 0 ?(
-        pizzas?.map( item => <CardPizza key={item.id} pizza={item} addToPizzaCart={addToPizzaCart}/>)
+        pizzas?.map( item => <CardPizza key={item.id} pizza={item} />)
        ) : <div className="flex justify-end">carregando...</div>}
       </section>
     </main>
