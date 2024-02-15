@@ -3,7 +3,12 @@ import Image from "next/image";
 import React from "react";
 import plus from "@/app/icons/plus (1).svg";
 
-export const CardPizza = ({...pizza}: PropsPizza) => {
+interface Props {
+    pizza: PropsPizza;
+    addToPizzaCart: (newItem: PropsPizza) => void; 
+}
+
+export const CardPizza = ({pizza, addToPizzaCart}: Props) => {
     
     return(
         <div className="flex gap-4 border border-s-secondary box-border w-[90%] h-35 rounded-md shadow border-none">
@@ -19,7 +24,7 @@ export const CardPizza = ({...pizza}: PropsPizza) => {
                 <span className="text-info text-xs">{pizza.minTime} - {pizza.maxTime} minutos</span>
                 <div className="w-40 pb-2 pt-1 flex justify-between items-center mr-2">
                     <span className="text-success font-sans font-bold">{pizza.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</span>
-                    <button className="w-10 h-12 border border-none rounded-md shadow text-med text-secondary hover:bg-success">
+                    <button onClick={ () => addToPizzaCart(pizza)} className="w-10 h-12 border border-none rounded-md shadow text-med text-secondary hover:bg-success">
                         <Image width={25} className="m-auto" src={plus} alt="Sinal de mais"/>
                     </button>
                 </div>

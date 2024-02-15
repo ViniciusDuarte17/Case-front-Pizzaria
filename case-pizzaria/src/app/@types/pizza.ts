@@ -8,4 +8,5 @@ export interface PropsPizza {
     minTime: number;
     maxTime: number;
     preco: number;
+    amout: number
 }

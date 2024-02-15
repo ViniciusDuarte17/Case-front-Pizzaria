@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GlobalStateContext } from "./GlobalStateContext";
 import fatia from "@/app/icons/fatia.svg";
 import sandwich from "@/app/icons/sandwich.svg";
@@ -10,6 +10,8 @@ import { PropsPizza } from "../@types/pizza";
 
 export const GlobalState = (props: any) => {
   const [cartPizzas, setCartPizzas] = useState<PropsPizza | any>([]);
+
+  console.log("14", cartPizzas)
  
   const pizzas = [
     {

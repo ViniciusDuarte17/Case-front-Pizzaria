@@ -6,7 +6,7 @@ import line from "@/app/icons/Line 1.svg";
 export const Cart = ({ ...item }) => {
 
   return (
-    <section className="bg-info bg-opacity-30 p-2 rounded-lg">
+    <section className="flex flex-col mb-2 bg-info bg-opacity-30 p-2 rounded-lg">
       <section className="flex gap-3">
         <section>
           <Image
@@ -35,7 +35,7 @@ export const Cart = ({ ...item }) => {
           <button className="w-6 h-6 mt-2 mb-2 border border-none rounded-md shadow text-med text-secondary bg-primary hover:bg-warning">
            <Image className="m-auto" width={15} src={line} alt="sinal de menos" />
           </button>
-          <h4>01</h4>
+          <h4>{item.amout < 10 ? `0${item.amout}`: item.amout}</h4>
           <button className="w-6 h-6 mr-1 border border-none rounded-md shadow text-med text-secondary bg-primary hover:bg-success">
             <Image className="m-auto" width={15} src={plus} alt="sinal de mais" />
           </button>

@@ -3,7 +3,7 @@ import { PropsPizza } from '../@types/pizza';
 import { PropsMenu } from '../@types/menu';
 
 interface propsType {
-    pizzas: PropsPizza[];
+    pizzas: PropsPizza[] | any[];
     menus: PropsMenu[];
     cartPizzas: PropsPizza[];
     setCartPizzas: React.Dispatch<any>
