@@ -7,6 +7,7 @@ interface propsType {
     menus: PropsMenu[];
     cartPizzas: PropsPizza[];
     setCartPizzas: React.Dispatch<any>
+    totalPrice: number
 }
 
 export const GlobalStateContext = React.createContext({} as propsType);

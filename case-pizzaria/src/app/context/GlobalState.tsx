@@ -93,11 +93,19 @@ export const GlobalState = (props: any) => {
     { icon: pack, name: "Pack" },
   ];
 
+
+  let totalPrice = 0;
+
+  cartPizzas.forEach( (item: PropsPizza) => {
+    totalPrice += item.preco * item.amout
+  })
+
   const data = {
     pizzas,
     menus,
     cartPizzas,
-    setCartPizzas
+    setCartPizzas,
+    totalPrice
   };
 
   return (
