@@ -11,32 +11,17 @@ import { EmptyCart } from "./components/EmptyCart";
 import { GlobalStateContext } from "@/app/context/GlobalStateContext";
 
 export const SideBar = () => {
-  const { cartPizzas } = useContext(GlobalStateContext);
-  const [itIsMade, setItIsMade] = useState(false);
+  const { cartPizzas, itIsMade, setItIsMade } = useContext(GlobalStateContext);
   const [endItIsMade, setEndItIsMade] = useState(0);
-  let interval:  number | NodeJS.Timeout | undefined;
   
   useEffect( () => {
-    setItIsMade(!itIsMade);
-
-     interval = setInterval( () => {
+     const interval = setInterval( () => {
       setItIsMade(false);
       setEndItIsMade( endItIsMade + 1)
-    }, 2000);
-
-    return () => {
-      clearInterval(interval)
-    };
+    }, 3000);
+    return () => { clearInterval(interval) };
     
   }, [cartPizzas]);
-
-  useEffect( () => {
-  
-    if(endItIsMade >= 2) {
-      setItIsMade(false)
-      clearInterval(interval)
-    }
-  }, [endItIsMade]);
 
   return (
     <main className="flex flex-col gap-2 p-4">

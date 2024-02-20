@@ -9,9 +9,10 @@ interface Props {
 }
 
 export const CardPizza = ({pizza}: Props) => {
-    const {cartPizzas, setCartPizzas} = useContext(GlobalStateContext)
+    const { cartPizzas, setCartPizzas, setItIsMade } = useContext(GlobalStateContext)
 
     const addToPizzaCart = (newItem: PropsPizza) => {
+      setItIsMade(true);
       const index = cartPizzas.findIndex(
         (i: PropsPizza) => i.id === newItem.id
       );
@@ -25,6 +26,7 @@ export const CardPizza = ({pizza}: Props) => {
       }
 
       setCartPizzas(newCart);
+      // setItIsMade(false);
     };
     
     return(

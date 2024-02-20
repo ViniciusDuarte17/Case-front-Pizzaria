@@ -10,6 +10,7 @@ import { PropsPizza } from "../@types/pizza";
 
 export const GlobalState = (props: any) => {
   const [cartPizzas, setCartPizzas] = useState<PropsPizza | any>([]);
+  const [itIsMade, setItIsMade] = useState(false);
  
   const pizzas = [
     {
@@ -98,14 +99,16 @@ export const GlobalState = (props: any) => {
 
   cartPizzas.forEach( (item: PropsPizza) => {
     totalPrice += item.preco * item.amout
-  })
+  });
 
   const data = {
     pizzas,
     menus,
     cartPizzas,
     setCartPizzas,
-    totalPrice
+    totalPrice,
+    setItIsMade,
+    itIsMade
   };
 
   return (

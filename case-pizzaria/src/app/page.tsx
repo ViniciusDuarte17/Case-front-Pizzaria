@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { NavBar } from "@/app/components/NavBar";
 import { Header } from "@/app/components/Header";
 import { Main } from "./components/Main";
