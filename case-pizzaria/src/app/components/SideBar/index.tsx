@@ -24,7 +24,7 @@ export const SideBar = () => {
   }, [cartPizzas]);
 
   return (
-    <main className="flex flex-col gap-2 p-4">
+    <main className="flex flex-col gap-1 p-3">
       <header className="flex justify-between w-[100%] items-center">
         <section className="flex gap-3 items-center">
           <figure>

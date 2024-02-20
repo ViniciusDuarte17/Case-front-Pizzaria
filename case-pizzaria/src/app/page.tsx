@@ -19,7 +19,7 @@ export default function Home() {
           <Header />
           <Main />
         </section>
-        <section className="flex flex-col w-[24%]">
+        <section className="flex flex-col w-[26%]">
           <div>
             <SideBar />
           </div>

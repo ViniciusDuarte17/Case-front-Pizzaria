@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GlobalStateContext } from "./GlobalStateContext";
 import fatia from "@/app/icons/fatia.svg";
 import sandwich from "@/app/icons/sandwich.svg";
@@ -11,6 +11,7 @@ import { PropsPizza } from "../@types/pizza";
 export const GlobalState = (props: any) => {
   const [cartPizzas, setCartPizzas] = useState<PropsPizza | any>([]);
   const [itIsMade, setItIsMade] = useState(false);
+  const [modalPay, setModalPay] = useState(false);
  
   const pizzas = [
     {
@@ -94,12 +95,16 @@ export const GlobalState = (props: any) => {
     { icon: pack, name: "Pack" },
   ];
 
-
   let totalPrice = 0;
 
   cartPizzas.forEach( (item: PropsPizza) => {
     totalPrice += item.preco * item.amout
   });
+
+  function confirmPay (method: string) {
+    
+
+  }
 
   const data = {
     pizzas,

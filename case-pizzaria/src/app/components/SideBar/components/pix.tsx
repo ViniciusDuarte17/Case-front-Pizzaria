@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import { GlobalStateContext } from "@/app/context/GlobalStateContext";
+import React, { useContext, useState } from "react";
 import PIX from "react-qrcode-pix";
 
 const now = new Date().getTime().toString();
 
 export const MethodPix = () => {
-  const preco = 100;
+  const { totalPrice } = useContext(GlobalStateContext);
+
   const [fullPIX, setFullPIX] = useState("");
 
   return (
@@ -17,7 +19,7 @@ export const MethodPix = () => {
           city="Campo Alegre de Loudes"
           cep="47.220-000"
           code={"RQP" + now}
-          amount={preco}
+          amount={totalPrice}
           onLoad={setFullPIX}
           resize={150}
           variant="fluid"

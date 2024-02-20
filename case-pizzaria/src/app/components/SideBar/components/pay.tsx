@@ -25,7 +25,7 @@ export const MenuPay = () => {
   }
 
   return (
-    <section className="mt-4">
+    <section className="mt-0">
       <label
         htmlFor="countries"
         className="block mb-2 text-sm font-medium text-green-500 dark:text-white"
