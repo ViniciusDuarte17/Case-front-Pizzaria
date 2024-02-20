@@ -11,7 +11,6 @@ import { PropsPizza } from "../@types/pizza";
 export const GlobalState = (props: any) => {
   const [cartPizzas, setCartPizzas] = useState<PropsPizza | any>([]);
   const [itIsMade, setItIsMade] = useState(false);
-  const [modalPay, setModalPay] = useState(false);
  
   const pizzas = [
     {
@@ -101,10 +100,6 @@ export const GlobalState = (props: any) => {
     totalPrice += item.preco * item.amout
   });
 
-  function confirmPay (method: string) {
-    
-
-  }
 
   const data = {
     pizzas,

@@ -2,10 +2,12 @@ import React, { ChangeEvent, useState } from "react";
 import { MethodPix } from "./pix";
 import { MethodCard } from "./card";
 import { MethodMoney } from "./money";
+import ButtonModal from "./Modal/ButtonModal";
 
 
 export const MenuPay = () => {
   const [selectMethod, setSelectMethod] = useState<string>('');
+  const [modalPay, setModalPay] = useState(false);
 
   let componentSelected;
 
@@ -22,6 +24,10 @@ export const MenuPay = () => {
   function handleSelectChange(e: ChangeEvent<HTMLSelectElement>) {
     const selectedionOption = e.target.value;
     setSelectMethod(selectedionOption);
+  }
+
+  function confirmPay () {
+    
   }
 
   return (
@@ -46,11 +52,12 @@ export const MenuPay = () => {
       <section>{componentSelected}</section>
       {selectMethod !== "" && (
         <section className="flex justify-center mt-4">
-          <button className="bg-success p-2 rounded-md w-[100%] hover:bg-opacity-80 cursor-pointer">
+          {/* <button className="bg-success p-2 rounded-md w-[100%] hover:bg-opacity-80 cursor-pointer">
             <span className="font-sans font-bold text-sm text-primary">
               Confrimar
             </span>
-          </button>
+          </button> */}
+          <ButtonModal />
         </section>
       )}
     </section>
