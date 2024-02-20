@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { Cart } from "../Cart";
 import { FaRegBell } from "react-icons/fa6";
+import { BiSolidBellPlus } from "react-icons/bi";
 import profileLogo from "@/app/assets/profile.jpg";
 import { BsCartPlus } from "react-icons/bs";
 import { MenuPay } from "./components/pay";
@@ -11,6 +12,31 @@ import { GlobalStateContext } from "@/app/context/GlobalStateContext";
 
 export const SideBar = () => {
   const { cartPizzas } = useContext(GlobalStateContext);
+  const [itIsMade, setItIsMade] = useState(false);
+  const [endItIsMade, setEndItIsMade] = useState(0);
+  let interval:  number | NodeJS.Timeout | undefined;
+  
+  useEffect( () => {
+    setItIsMade(!itIsMade);
+
+     interval = setInterval( () => {
+      setItIsMade(false);
+      setEndItIsMade( endItIsMade + 1)
+    }, 2000);
+
+    return () => {
+      clearInterval(interval)
+    };
+    
+  }, [cartPizzas]);
+
+  useEffect( () => {
+  
+    if(endItIsMade >= 2) {
+      setItIsMade(false)
+      clearInterval(interval)
+    }
+  }, [endItIsMade]);
 
   return (
     <main className="flex flex-col gap-2 p-4">
@@ -29,8 +55,11 @@ export const SideBar = () => {
         </section>
 
         <section>
-          <span>
-            <FaRegBell />
+          <span className="cursor-pointer">
+            {
+              !itIsMade ?
+              <FaRegBell /> : <BiSolidBellPlus className="text-success"/>
+            }
           </span>
         </section>
       </header>
