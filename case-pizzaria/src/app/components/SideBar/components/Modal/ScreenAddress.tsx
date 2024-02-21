@@ -20,13 +20,13 @@ export const ScreenAddress = ({ setScreen }: Props) => {
             <form onSubmit={onSubmit}>
                 <h1 className='flex justify-center text-lg text-secondary font-bold mb-3'>Endereço</h1>
                 <div className='w-[100%] flex flex-col gap-2'>
-                    <Input placeholder='Cep' type='text' />
+                    <Input placeholder='Cep' type='text'/>
                     <Input placeholder='Cidade' type='text' />
                     <Input placeholder='UF' type='text' />
                     <Input placeholder='Telefone' type='text'/>
                     <Input placeholder='Número' type='text' />
                     <Input placeholder='Complemento' type='text' />
-                    <Input placeholder='País' type='text' />
+                    <Input placeholder='País' type='text'/>
                     <Button variant='contained' color='warning' type='submit'>Finalizar</Button>
                 </div>
             </form>
