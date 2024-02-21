@@ -2,7 +2,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import { Input } from '@/app/components/Input';
+import { ScreenLogin } from './ScreenLogin';
+import { ScreenSignup } from './ScreenSignup';
+import { ScreenAddress } from './ScreenAddress';
+
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -21,6 +24,19 @@ export default function ButtonModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [screen, setScreen] = React.useState('login');
+
+  let screenTela;
+
+  switch(screen){
+    case 'login': screenTela = <ScreenLogin setScreen={setScreen}/>;
+      break;
+    case 'cadastro': screenTela = <ScreenSignup setScreen={setScreen}/>;
+      break;
+    case 'endereco': screenTela = <ScreenAddress setScreen={setScreen}/>;
+      break;
+    default: <ScreenLogin setScreen={setScreen}/>;
+  }
 
   return (
     <div className='w-[100%]'>
@@ -32,13 +48,7 @@ export default function ButtonModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-            <div className='w-[100%] h-full flex flex-col justify-center '>
-                  <h1 className='flex justify-center text-lg text-secondary font-bold'>Login</h1>
-                  <div className='w-[100%] flex flex-col gap-2'>
-                    <Input placeholder='E-mail' type='email'/>
-                    <Input placeholder='Senha' type='password'/>
-                  </div>
-            </div>
+          {screenTela}
         </Box>
       </Modal>
     </div>
