@@ -1,40 +1,11 @@
 import Image from "next/image";
-import React, { useContext } from "react";
+import React from "react";
 import plus from "@/app/icons/plus.svg";
 import line from "@/app/icons/Line 1.svg";
-import { PropsPizza } from "@/app/@types/pizza";
-import { GlobalStateContext } from "@/app/context/GlobalStateContext";
+import { useFunctionPizza } from "@/app/hooks/useFunctionPizza";
 
 export const Cart = ({ ...item }) => {
-  const { cartPizzas, setCartPizzas } = useContext(GlobalStateContext);
-
-  const addToPizzaCart = (newItem: PropsPizza) => {
-    const index = cartPizzas.findIndex((i: PropsPizza) => i.id === newItem.id);
-    const newCart = [...cartPizzas];
-  
-    if (index === -1) {
-      const cartItem = { ...newItem, amout: 1 };
-      newCart.push(cartItem);
-    } else {
-      newCart[index].amout = newCart[index].amout + 1;
-    }
-  
-    setCartPizzas(newCart);
-  };
-
-  const removeToPizzaCart = (removeItem: PropsPizza) => {
-    const index = cartPizzas.findIndex((i: PropsPizza) => i.id === removeItem.id);
-    const newCart = [...cartPizzas];
-  
-    if (newCart[index].amout === 1) {
-  
-      newCart.splice(index, 1)
-    } else {
-      newCart[index].amout -= 1;
-    }
-  
-    setCartPizzas(newCart);
-  };
+  const { addToPizzaCart, removeToPizzaCart } = useFunctionPizza();
 
   return (
     <section className="flex flex-col mb-2 bg-info bg-opacity-30 p-2 rounded-lg">
