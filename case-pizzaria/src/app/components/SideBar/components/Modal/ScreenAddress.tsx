@@ -1,28 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Input } from '@/app/components/Input';
 import { Button } from "@mui/material";
-import { user } from "@/app/@types/user";
 import { section } from "../Utils/section";
+import { useFormDate } from "@/app/hooks/useFormDate";
+import { addressOnSubmit } from "../service/addressOnSubmit";
 
 interface Props {
     setScreen:React.Dispatch<React.SetStateAction<string>>;
+    setOpen:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const ScreenAddress = ({ setScreen }: Props) => {
-    const [data, setData] = useState({} as any);
-
-    function onSubmit (e: React.ChangeEvent<HTMLFormElement>) {
-        e.preventDefault();
-        // puxar os dados salvo no localStorage
-      }
-
-      function updateData (id: string, value: any) {
-        setData({...data, [id]: value})
-      }
+export const ScreenAddress = ({ setScreen, setOpen }: Props) => {
+    const {data, updateData } = useFormDate();
 
     return (
         <div className='w-[100%] h-full flex flex-col gap-4 p-0'>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={(event:React.ChangeEvent<HTMLFormElement>) => addressOnSubmit({event, data, setOpen})}>
                 <h1 className='flex justify-center text-lg text-secondary font-bold mb-3'>Endereço</h1>
                 <div className='w-[100%] flex flex-col gap-2'>
                     {

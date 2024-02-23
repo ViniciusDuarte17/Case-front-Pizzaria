@@ -1,27 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Input } from '@/app/components/Input';
 import { Button } from "@mui/material";
 import { section } from "../Utils/section";
+import { useFormDate } from "@/app/hooks/useFormDate";
+import { loginOnSubmit } from "../service/loginOnSubmit";
 
 interface Props {
-    setScreen: React.Dispatch<React.SetStateAction<string>>
+    setScreen: React.Dispatch<React.SetStateAction<string>>;
+    setOpen:React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const ScreenLogin = ({setScreen}: Props) => {
-    const [data, setData ] = useState({} as any);
-
-    function onSubmit (e: React.ChangeEvent<HTMLFormElement>) {
-        e.preventDefault();
-        // puxar os dados salvo no localStorage
-      }
-
-      function updateData(id: string, value: any) {
-        setData({...data, [id]: value})
-      }
+export const ScreenLogin = ({setScreen, setOpen}: Props) => {
+    const {data, updateData } = useFormDate();
 
     return (
         <div className='w-[100%] h-full flex flex-col justify-center gap-4'>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={(event: React.ChangeEvent<HTMLFormElement>) => loginOnSubmit({event, data, setOpen})}>
                 <h1 className='flex justify-center text-lg text-secondary font-bold mb-5'>Login</h1>
                 <div className='w-[100%] flex flex-col gap-2'>
                     {

@@ -29,13 +29,13 @@ export default function ButtonModal() {
   let screenTela;
 
   switch(screen){
-    case 'login': screenTela = <ScreenLogin setScreen={setScreen}/>;
+    case 'login': screenTela = <ScreenLogin setScreen={setScreen} setOpen={setOpen}/>;
       break;
     case 'cadastro': screenTela = <ScreenSignup setScreen={setScreen}/>;
       break;
-    case 'endereco': screenTela = <ScreenAddress setScreen={setScreen}/>;
+    case 'endereco': screenTela = <ScreenAddress setScreen={setScreen} setOpen={setOpen}/>;
       break;
-    default: <ScreenLogin setScreen={setScreen}/>;
+    default: <ScreenLogin setScreen={setScreen} setOpen={setOpen}/>;
   }
 
   return (

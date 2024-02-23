@@ -52,11 +52,6 @@ export const MenuPay = () => {
       <section>{componentSelected}</section>
       {selectMethod !== "" && (
         <section className="flex justify-center mt-4">
-          {/* <button className="bg-success p-2 rounded-md w-[100%] hover:bg-opacity-80 cursor-pointer">
-            <span className="font-sans font-bold text-sm text-primary">
-              Confrimar
-            </span>
-          </button> */}
           <ButtonModal />
         </section>
       )}

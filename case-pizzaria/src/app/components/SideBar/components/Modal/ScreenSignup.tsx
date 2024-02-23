@@ -1,27 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Input } from '@/app/components/Input';
 import { Button } from "@mui/material";
 import { section } from "../Utils/section";
+import { useFormDate } from "@/app/hooks/useFormDate";
+import { signupOnSubmit } from "../service/signupOnSubmit";
 
 interface Props {
     setScreen:React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ScreenSignup = ({ setScreen }: Props) => {
-    const [data, setData] = useState({} as any);
-    function onSubmit (e: React.ChangeEvent<HTMLFormElement>) {
-        e.preventDefault();
-        setScreen('endereco');
-        
-      }
-
-      function updatedata(id: string, value: any){
-        setData({...data, [id]: value})
-      }
+    const {data, updateData } = useFormDate();
 
     return (
         <div className='w-[100%] h-full flex flex-col gap-4 p-2'>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={(event: React.ChangeEvent<HTMLFormElement>) => signupOnSubmit({event, data, setScreen})}>
                 <h1 className='flex justify-center text-lg text-secondary font-bold mb-5'>Cadastro</h1>
                 <div className='w-[100%] flex flex-col gap-2'>
                     {
@@ -31,7 +24,7 @@ export const ScreenSignup = ({ setScreen }: Props) => {
                                 placeholder={item.placeholder}
                                 type={item.type}
                                 value={data[item.name]}
-                                onChangeText={(text) => updatedata(item.name, text.target.value)}
+                                onChangeText={(text) => updateData(item.name, text.target.value)}
                             />
                         ))
                     }

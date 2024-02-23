@@ -55,24 +55,30 @@ export const section = {
         },
         {
             id: 3,
+            placeholder: 'UF',
+            type: 'text',
+            name: 'uf'
+        },
+        {
+            id: 4,
             placeholder: 'Telefone',
             type: 'text',
             name: 'phone'
         },
         {
-            id: 4,
+            id: 5,
             placeholder: 'Número',
             type: 'text',
             name: 'number'
         },
         {
-            id: 5,
+            id: 6,
             placeholder: 'Complemento',
             type: 'text',
             name: 'comple'
         },
         {
-            id: 6,
+            id: 7,
             placeholder: 'País',
             type: 'text',
             name: 'country'
