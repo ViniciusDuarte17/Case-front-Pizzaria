@@ -1,8 +1,7 @@
 import { PropsPizza } from "@/app/@types/pizza";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React from "react";
 import plus from "@/app/icons/plus (1).svg";
-import { GlobalStateContext } from "@/app/context/GlobalStateContext";
 import { useFunctionPizza } from "@/app/hooks/useFunctionPizza";
 
 interface Props {

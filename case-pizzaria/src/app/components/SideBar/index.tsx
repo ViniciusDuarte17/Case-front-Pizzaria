@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { Cart } from "../Cart";
 import { FaRegBell } from "react-icons/fa6";
@@ -8,20 +8,10 @@ import { BsCartPlus } from "react-icons/bs";
 import { MenuPay } from "./components/pay";
 import { TotalPreco } from "./components/TotalPreco";
 import { EmptyCart } from "./components/EmptyCart";
-import { GlobalStateContext } from "@/app/context/GlobalStateContext";
+import { useHooksIndexBar } from "./hooks/useHookIndexBar";
 
 export const SideBar = () => {
-  const { cartPizzas, itIsMade, setItIsMade } = useContext(GlobalStateContext);
-  const [endItIsMade, setEndItIsMade] = useState(0);
-  
-  useEffect( () => {
-     const interval = setInterval( () => {
-      setItIsMade(false);
-      setEndItIsMade( endItIsMade + 1)
-    }, 3000);
-    return () => { clearInterval(interval) };
-    
-  }, [cartPizzas]);
+ const { cartPizzas, itIsMade } = useHooksIndexBar();
 
   return (
     <main className="flex flex-col gap-1 p-3">

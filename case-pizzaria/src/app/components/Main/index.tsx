@@ -12,7 +12,7 @@ export const Main = () => {
 
   return (
     <main className="flex flex-col h-[80vh] box-border">
-      <section className="flex self-center mt-1 w-[95%] h-[16em] bg-black rounded-[24px] box-border">
+      <section className="flex self-center mt-1 w-[95%] h-[16em] bg-black rounded-[24px] box-border max-md:h-[6em] justify-between">
         <section className="flex flex-col w-[44vw] h-full pl-6 pt-6 max-[892px]:h-[25vh]">
           <h1 className="text-primary text-xl pb-4">
             Make Your First Order and Get <br />
