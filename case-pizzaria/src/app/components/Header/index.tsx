@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Input } from "../Input";
 
 
-export const Header = () => {
-    const [filter, setFilter] = useState('' as any);
+export const Header = ({data, updateData}: any) => {
+   
     const user = {
         name: 'vinicius',
         welcome: 'Welcome Back'
@@ -15,7 +15,7 @@ export const Header = () => {
                 <span className="text-secondary font-bold text-lg font-sans">{user.welcome}</span>
             </section>
             <React.Fragment>
-                <Input type={'search'} placeholder={'Search'} value={filter} onChangeText={(text) => setFilter(text.target.value)}/> 
+                <Input type={'search'} placeholder={'Search'} value={data.search} onChangeText={(text) => updateData('search', text.target.value)}/> 
             </React.Fragment>
 
         </header>

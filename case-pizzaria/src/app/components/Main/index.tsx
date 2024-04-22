@@ -6,7 +6,7 @@ import { CardMenu } from "../CardMenu";
 import { CardPizza } from "../CardPizza";
 import { GlobalStateContext } from "@/app/context/GlobalStateContext";
 
-export const Main = () => {
+export const Main = ({data}: any) => {
   const { pizzas, menus } = useContext(GlobalStateContext);
   const ref = useRef(null);
 
@@ -48,7 +48,8 @@ export const Main = () => {
             ref={ref}
             className="flex gap-5 overflow-x-scroll list-none custom-scrollbar w-[100%] max-[885px]:w-[150px]"
           >
-            {menus.map((item, index) => (
+            {menus
+            .map((item, index) => (
               <motion.li
                 key={index}
                 >
@@ -64,7 +65,8 @@ export const Main = () => {
       <section className="grid grid-cols-2 border border-none self-center gap-3 w-[90%] overflow-x-scroll list-none custom-scrollbar max-[1110] max-[892px]:grid-cols-1">    
        {
         pizzas?.length > 0 ?(
-        pizzas?.map( item => <CardPizza key={item.id} pizza={item} />)
+        pizzas?.filter(item => item.namePizza.toLowerCase().includes(data.search === undefined ? '' : data.search.toLowerCase()))
+        .map( item => <CardPizza key={item.id} pizza={item} />)
        ) : <div className="flex justify-end">carregando...</div>}
       </section>
     </main>

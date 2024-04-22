@@ -14,7 +14,7 @@ export const Input = ({type, placeholder, value, onChangeText}: PropsInput) => {
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                     </svg>}
                 </div>
-                <input value={value}  onChange={onChangeText} type={type} id="search" className="placeholder-textColor outline-none w-full p-2 ps-10 text-textColor bg-backColor focus:ring-success focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-info dark:text-white dark:focus:ring-blue-500 rounded-md text-sm" placeholder={placeholder} required />
+                <input value={value} onChange={onChangeText} type={type} id="search" className="placeholder-textColor outline-none w-full p-2 ps-10 text-textColor bg-backColor focus:ring-success focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-info dark:text-white dark:focus:ring-blue-500 rounded-md text-sm" placeholder={placeholder} required />
             </div>
         </form>
     )

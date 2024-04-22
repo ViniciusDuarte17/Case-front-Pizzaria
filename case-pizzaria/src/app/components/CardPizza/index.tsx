@@ -18,7 +18,7 @@ export const CardPizza = ({pizza}: Props) => {
           width={100}
           height={100}
           src={pizza.img}
-          alt="pizza" />
+          alt={pizza.namePizza}/>
       </section>
       <section>
         <h1 className="font-sans font-bold text-[22px] break-all whitespace-wrap">{pizza.namePizza}</h1>

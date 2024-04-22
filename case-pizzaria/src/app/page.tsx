@@ -1,17 +1,17 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { NavBar } from "@/app/components/NavBar";
 import { Header } from "@/app/components/Header";
 import { Main } from "./components/Main";
 import { SideBar } from "./components/SideBar";
 import { GlobalState } from "./context/GlobalState";
 import { useHomePage } from "./hooks/useHomePage";
+import { useFormDate } from "./hooks/useFormDate";
 
 
 export default function Home() {
   const {screen} = useHomePage();
-
-  console.log(screen)
+  const {data, updateData } = useFormDate();
  
   return (
     <GlobalState>
@@ -20,8 +20,8 @@ export default function Home() {
           <NavBar />
         </section>}
         <section className="flex flex-col w-[68%] h-[100vh] bg-primary shadow max-md:w-[95%] mb-10">
-          <Header />
-          <Main />
+          <Header data={data} updateData={updateData}/>
+          <Main data={data}/>
         </section>
         <section className="flex flex-col w-[26%]">
           <div>
